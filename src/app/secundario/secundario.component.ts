@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Mision } from '../mision';
 
 @Component({
   selector: 'app-secundario',
@@ -7,24 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SecundarioComponent implements OnInit {
 
-  nombre:string;
-  duracion:number;
+  mision:Mision;
+  misiones:Mision[];
+  textoMision:string;
 
-  misiones:string[];
-
-  constructor() { 
+  constructor() {
     this.misiones = [];
-    this.nombre = "";
-    this.duracion = 0;
+    this.mision = { nombre:"",duracion:0};
+    this.textoMision ="";
   }
 
   ngOnInit(): void {
   }
 
   agregarMision():void {
-    this.misiones.push(this.nombre);
-    this.nombre="";
-    this.duracion=0;
-  }
+    let nuevaMision:Mision = { nombre: this.mision.nombre, duracion: this.mision.duracion };
+    this.misiones.push(nuevaMision);
+    this.textoMision = `${this.mision.nombre}-${this.mision.duracion}`;
+    console.log(this.textoMision);
 
+
+    this.mision.nombre="";
+    this.mision.duracion=0;
+    
+  }
 }
