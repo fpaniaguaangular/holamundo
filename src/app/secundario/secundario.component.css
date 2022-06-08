@@ -1,0 +1,12 @@
+#titulo-secundario {
+    clear: both;
+}
+
+.mision {
+    float:left;
+    width: 100px;
+    height: 100px;
+    background-color: darkcyan;
+    color:white;
+    margin:3px;
+}

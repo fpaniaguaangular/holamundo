@@ -1,11 +1,20 @@
+<h1>Principal</h1>
 <div>
     <button (click)="agregarTarea()">Agregar</button>
     <button (click)="eliminarTarea()">Eliminar</button>
+</div>
+<div>
     <button (click)="filtrar(0)">Todas</button>
     <button (click)="filtrar(5)">Medias e importantes</button>
     <button (click)="filtrar(8)">Importantes</button>
-    
+    <input type="text" [(ngModel)]="cadenaBusqueda">
+    <button (click)="filtrarPorDescripcion()">Buscar tareas por descripción</button>
 </div>
+<div>
+    <button (click)="convertirAMayusculas()">Convertir a mayúsculas</button>
+    <button (click)="convertirAMinusculas()">Convertir a minúsculas</button>
+</div>
+{{ cadenaBusqueda }}
 <div>
     <p>Total tareas pendientes: {{ numeroTareas }}</p>
 </div>

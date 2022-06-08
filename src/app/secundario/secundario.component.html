@@ -1,0 +1,9 @@
+<h1 id="titulo-secundario">Secundario</h1>
+<div>
+<input type="text" placeholder="Nombre" [(ngModel)]="nombre">
+<input type="number" placeholder="Duración" [(ngModel)]="duracion">
+<button (click)="agregarMision()">Agregar misión</button>
+</div>
+<div *ngFor="let mision of misiones" class="mision">
+    {{ mision }}
+</div>

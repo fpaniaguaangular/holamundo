@@ -7,9 +7,13 @@ export class Tarea {
     hora:string;
     prioridad:number;
     //Constructor
-    constructor(nombre:string, hora:string){
+    constructor(nombre:string, hora:string, descripcion?: any){
         this.nombre = nombre;
-        this.descripcion = this.verbos[Math.floor(Math.random()*this.verbos.length)] + " " + this.sustantivos[Math.floor(Math.random()*this.sustantivos.length)];
+        if (descripcion===undefined){
+            this.descripcion = this.verbos[Math.floor(Math.random()*this.verbos.length)] + " " + this.sustantivos[Math.floor(Math.random()*this.sustantivos.length)];
+        } else {
+            this.descripcion = descripcion;
+        }
         this.hora = hora;
         this.prioridad = Math.round(Math.random()*10);   
     }
