@@ -1,0 +1,16 @@
+<div>
+    <button (click)="agregarTarea()">Agregar</button>
+    <button (click)="eliminarTarea()">Eliminar</button>
+    <button (click)="filtrar(0)">Todas</button>
+    <button (click)="filtrar(5)">Medias e importantes</button>
+    <button (click)="filtrar(8)">Importantes</button>
+    
+</div>
+<div>
+    <p>Total tareas pendientes: {{ numeroTareas }}</p>
+</div>
+<div *ngFor="let tarea of tareasFiltradas" class="ficha">
+    <h1>{{ tarea.nombre }}</h1>
+    <p>{{ tarea.descripcion }}</p>
+    <p>Prioridad: {{ tarea.prioridad }}</p>
+</div>
