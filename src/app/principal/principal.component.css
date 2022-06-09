@@ -2,7 +2,7 @@
     background-color: rgb(10, 1, 60);
     color:rgb(247, 225, 214);
     width: 200px;
-    height: 200px;
+    height: 250px;
     border-radius: 5px;
     margin-bottom: 5px;
     margin-left: 10px;
@@ -20,4 +20,7 @@ button {
     padding: 10px;
     border-radius: 5px;
     margin: 3px;
+}
+p {
+    line-height: .5;
 }

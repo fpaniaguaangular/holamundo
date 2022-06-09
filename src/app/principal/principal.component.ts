@@ -22,7 +22,10 @@ export class PrincipalComponent implements OnInit {
 
   agregarTarea():void {
     console.log("Agregando...");
-    this.tareas.push(new Tarea("Tarea " + (this.numeroTareas+1),"10:00"));
+    let tarea=new Tarea("Tarea " + (this.numeroTareas+1),"10:00");
+    tarea.criticidad = 8;
+    this.tareas.push(tarea);
+    console.log(this.tareas);
     //this.tareas.push(new Tarea("Tarea " + (this.numeroTareas+1),"10:00", "Descripción de la tarea"));
     this.numeroTareas=this.tareas.length;
     this.tareasFiltradas = this.tareas;

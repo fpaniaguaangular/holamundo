@@ -14,7 +14,7 @@ export class SecundarioComponent implements OnInit {
 
   constructor() {
     this.misiones = [];
-    this.mision = { nombre:"",duracion:0};
+    this.mision = { nombre:"", duracion:0 };
     this.textoMision ="";
   }
 

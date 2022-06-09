@@ -1,12 +1,20 @@
+import { EstadosTarea } from "./estados-tarea";
+
 export class Tarea {
     static verbos:string[]=["Comprar","Alquilar","Vender","Reservar","Construir","Diseñar"];
     static sustantivos:string[]=["Coche","Piso","Ordenador","Apartamento","Película","Serie","Videojuego","Videoconsola"];
     //Atributos
-    nombre:string;
+    public nombre:string;
     descripcion:string;
     hora:string;
     prioridad:number;
+    estado:EstadosTarea;
+    private valor:number=10;
+    readonly capacidad:number=15;
+    private _criticidad:number;
     //Constructor
+    constructor(nombre:string, hora:string);
+    constructor(nombre:string, hora:string, descripcion:any);
     constructor(nombre:string, hora:string, descripcion?: any){
         this.nombre = nombre;
         if (descripcion===undefined){
@@ -15,8 +23,23 @@ export class Tarea {
             this.descripcion = descripcion;
         }
         this.hora = hora;
-        this.prioridad = Math.round(Math.random()*10);   
+        this.prioridad = Math.round(Math.random()*10);
+        this.estado = EstadosTarea.Asignada;
+        this._criticidad = 10; 
     }
     //Métodos
-    
+    mostrar():void {
+        console.log(`Nombre:${this.nombre}-Descripción:${this.descripcion}`);
+    }
+    getValor():number{
+        return this.valor;
+    }
+    set criticidad(nuevoNivelCriticidad:number){
+        console.log("Cambiando criticidad...");
+        this._criticidad = nuevoNivelCriticidad;
+    }
+    get criticidad():number{
+        console.log("Leyendo criticidad...");
+        return this._criticidad;
+    }
 }
